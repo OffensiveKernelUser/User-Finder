@@ -1,14 +1,26 @@
 const SearchButton = document.querySelector('.search-button');
 const SearchInput = document.querySelector('.search-input');
+const SearchBar = document.querySelector('.search-container');
+const UserInfos = document.querySelector('.user-infos-container');
+
+async function fetchGitHubUserData(username) {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    const data = await response.json();
+    return data;
+}
 
 function handleSearch() {
-    const searchTerm = SearchInput.value;
+    const Username = SearchInput.value;
     
-    if (searchTerm === '') {
+    if (Username === '') {
         return;
     }
 
-    //Code to search for the term
+    UserInfos.style.display = 'flex';
+    SearchBar.style.top = '12.5%'
+
+    let GitHubData = fetchGitHubUserData(Username)
+    console.log(GitHubData)
 }
 
 SearchButton.addEventListener('click', handleSearch);
