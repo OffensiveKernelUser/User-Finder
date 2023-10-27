@@ -24,9 +24,22 @@ body {
     border-radius: 400px;
 }
 
-.search-container i {
+.search-container i, .search-container button, .search-container button i {
     margin: 20px;
     color: rgba(255,255,255,0.8);
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    outline: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 .search-container input {
